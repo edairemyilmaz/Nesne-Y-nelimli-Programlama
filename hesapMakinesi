@@ -1,0 +1,53 @@
+using System;
+
+public class Program
+{
+    static void Main(string[] args)
+    {
+        Console.WriteLine("Birinci sayıyı girin: ");
+        int sayi1 = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("İkinci sayıyı girin: ");
+        int sayi2 = Convert.ToInt32(Console.ReadLine());
+
+        Console.WriteLine("İşlem seç (+=1, -=2, *=3, /=4): ");
+        int islem = Convert.ToInt32(Console.ReadLine());
+
+        hesapMakinesi(sayi1, sayi2, islem);
+    }
+
+    static void hesapMakinesi(int sayi1, int sayi2, int islem)
+    {
+        int sonuc;
+
+        switch (islem)
+        {
+            case 1:
+                sonuc = sayi1 + sayi2;
+                Console.WriteLine($"Sonuç: {sonuc}");
+                break;
+            case 2:
+                sonuc = sayi1 - sayi2;
+                Console.WriteLine($"Sonuç: {sonuc}");
+                break;
+            case 3:
+                sonuc = sayi1 * sayi2;
+                Console.WriteLine($"Sonuç: {sonuc}");
+                break;
+            case 4:
+                if (sayi2 == 0)
+                {
+                    Console.WriteLine("Bir sayıyı sıfıra bölemezsiniz.");
+                }
+                else
+                {
+                    sonuc = sayi1 / sayi2;
+                    Console.WriteLine($"Sonuç: {sonuc}");
+                }
+                break;
+            default:
+                Console.WriteLine("Geçersiz işlem seçimi.");
+                break;
+        }
+    }
+}
+
